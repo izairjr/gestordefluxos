@@ -1,0 +1,27 @@
+unit principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.WinXCtrls, Vcl.Menus,
+  System.ImageList, Vcl.ImgList, Vcl.Buttons;
+
+type
+  Ttelainicial = class(TForm)
+    RelativePanel1: TRelativePanel;
+    lancarMovimento: TSpeedButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  telainicial: Ttelainicial;
+
+implementation
+
+{$R *.dfm}
+
+end.

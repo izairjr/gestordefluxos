@@ -1,0 +1,18 @@
+object inclusaoLancamento_View: TinclusaoLancamento_View
+  Left = 0
+  Top = 0
+  AutoSize = True
+  Caption = 'Inclus'#227'o de Lan'#231'amento'
+  ClientHeight = 410
+  ClientWidth = 685
+  Color = clSkyBlue
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Arial'
+  Font.Style = [fsBold]
+  FormStyle = fsMDIForm
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 19
+end

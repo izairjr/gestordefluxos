@@ -1,0 +1,25 @@
+object inclusaoLancamento_View: TinclusaoLancamento_View
+  Left = 0
+  Top = 0
+  AutoSize = True
+  Caption = 'Inclus'#227'o de Lan'#231'amento'
+  ClientHeight = 41
+  ClientWidth = 185
+  Color = clSkyBlue
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Arial'
+  Font.Style = [fsBold]
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 185
+    Height = 41
+    Caption = 'Panel1'
+    TabOrder = 0
+  end
+end

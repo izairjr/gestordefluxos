@@ -1,0 +1,50 @@
+unit inclusaoLancamento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TinclusaoLancamento_View = class(TForm)
+    Panel1: TPanel;
+    historico: TLabel;
+    valor: TEdit;
+    informeValor: TLabel;
+    dataLanc: TEdit;
+    labelValor: TLabel;
+    comboTipoLanc: TComboBox;
+    labelTipo: TLabel;
+    checkAtivo: TCheckBox;
+    checkPassivo: TCheckBox;
+    comboTipoBalanco: TComboBox;
+    procedure checkAtivoClick(Sender: TObject);
+    procedure checkPassivoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  inclusaoLancamento_View: TinclusaoLancamento_View;
+
+implementation
+
+{$R *.dfm}
+
+procedure TinclusaoLancamento_View.checkAtivoClick(Sender: TObject);
+begin
+comboTipoBalanco.Visible := True;
+checkPassivo.Enabled := False;
+
+end;
+
+procedure TinclusaoLancamento_View.checkPassivoClick(Sender: TObject);
+begin
+comboTipoBalanco.Visible := True;
+checkAtivo.Enabled := False;
+end;
+
+end.
