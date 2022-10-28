@@ -2,7 +2,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
   Left = 0
   Top = 0
   Caption = 'Inclus'#227'o de Lan'#231'amento'
-  ClientHeight = 377
+  ClientHeight = 330
   ClientWidth = 654
   Color = clSkyBlue
   Font.Charset = DEFAULT_CHARSET
@@ -18,68 +18,88 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
     Left = 0
     Top = 0
     Width = 654
-    Height = 377
+    Height = 330
     Align = alClient
     TabOrder = 0
     object historico: TLabel
       Left = 24
-      Top = 15
+      Top = 72
       Width = 266
       Height = 19
       Caption = 'Informe o hist'#243'rico do lan'#231'amento:'
     end
     object informeValor: TLabel
-      Left = 24
-      Top = 71
+      Left = 190
+      Top = 14
       Width = 115
       Height = 19
       Caption = 'Informe o Valor'
     end
-    object labelValor: TLabel
-      Left = 200
-      Top = 71
-      Width = 107
+    object labelData: TLabel
+      Left = 344
+      Top = 14
+      Width = 110
       Height = 19
-      Caption = 'InformeValor: '
+      Caption = 'Infome a Data:'
     end
     object labelTipo: TLabel
-      Left = 368
-      Top = 71
+      Left = 24
+      Top = 14
       Width = 82
       Height = 19
       Caption = 'Tipo Lanc:'
     end
+    object btnCancelar: TSpeedButton
+      Left = 24
+      Top = 264
+      Width = 91
+      Height = 49
+      Caption = '&Cancelar'
+      OnClick = btnCancelarClick
+    end
+    object btnConfirmar: TSpeedButton
+      Left = 520
+      Top = 264
+      Width = 105
+      Height = 49
+      Caption = '&Confirmar'
+    end
     object TEdit
       Left = 24
-      Top = 40
+      Top = 97
       Width = 601
       Height = 27
-      TabOrder = 0
+      TabOrder = 2
       Text = '...'
     end
     object valor: TEdit
-      Left = 24
-      Top = 96
+      Left = 190
+      Top = 39
       Width = 121
       Height = 27
+      NumbersOnly = True
+      OEMConvert = True
       TabOrder = 1
-    end
-    object dataLanc: TEdit
-      Left = 200
-      Top = 96
-      Width = 121
-      Height = 27
-      TabOrder = 2
+      OnClick = btnCancelarClick
     end
     object comboTipoLanc: TComboBox
-      Left = 368
-      Top = 96
+      Left = 24
+      Top = 38
       Width = 137
       Height = 27
-      TabOrder = 3
+      Style = csDropDownList
+      CharCase = ecUpperCase
+      DragMode = dmAutomatic
+      ExtendedUI = True
+      ItemIndex = 0
+      ParentShowHint = False
+      ShowHint = False
+      Sorted = True
+      TabOrder = 0
+      Text = 'ENTRADA'
       Items.Strings = (
-        'Entrada'
-        'Saida')
+        'ENTRADA'
+        'SAIDA')
     end
     object checkAtivo: TCheckBox
       Left = 24
@@ -100,7 +120,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       OnClick = checkPassivoClick
     end
     object comboTipoBalanco: TComboBox
-      Left = 200
+      Left = 190
       Top = 147
       Width = 121
       Height = 27
@@ -128,5 +148,19 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       TabOrder = 8
       OnClick = checkCaixaClick
     end
+    object MaskEdit1: TMaskEdit
+      Left = 344
+      Top = 39
+      Width = 118
+      Height = 27
+      EditMask = '!99/99/0000;0;_'
+      MaxLength = 10
+      TabOrder = 3
+      Text = ''
+    end
+  end
+  object ActionList1: TActionList
+    Left = 568
+    Top = 152
   end
 end

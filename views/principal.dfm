@@ -51,15 +51,6 @@ object telainicial: Ttelainicial
         AlignVerticalCenterWithPanel = False
       end
       item
-        Control = editData
-        AlignBottomWithPanel = False
-        AlignHorizontalCenterWithPanel = False
-        AlignLeftWithPanel = False
-        AlignRightWithPanel = False
-        AlignTopWithPanel = False
-        AlignVerticalCenterWithPanel = False
-      end
-      item
         Control = labelBoasvindas
         AlignBottomWithPanel = False
         AlignHorizontalCenterWithPanel = False
@@ -71,9 +62,6 @@ object telainicial: Ttelainicial
     Color = clActiveCaption
     ParentBackground = False
     TabOrder = 0
-    DesignSize = (
-      737
-      497)
     object btnIncluirLancamento: TSpeedButton
       AlignWithMargins = True
       Left = 0
@@ -1792,20 +1780,6 @@ object telainicial: Ttelainicial
       ShowHint = False
       Spacing = 2
     end
-    object editData: TDatePicker
-      Left = 587
-      Top = 465
-      Anchors = []
-      Color = clActiveCaption
-      Date = 44860.000000000000000000
-      DateFormat = 'dd/MM/yyyy'
-      Font.Charset = DEFAULT_CHARSET
-      Font.Color = clWindowText
-      Font.Height = -16
-      Font.Name = 'Arial'
-      Font.Style = [fsBold]
-      TabOrder = 0
-    end
     object labelBoasvindas: TLinkLabel
       Left = 8
       Top = 472
@@ -1819,7 +1793,7 @@ object telainicial: Ttelainicial
       Font.Name = 'Arial'
       Font.Style = []
       ParentFont = False
-      TabOrder = 1
+      TabOrder = 0
     end
   end
 end

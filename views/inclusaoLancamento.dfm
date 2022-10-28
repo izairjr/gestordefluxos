@@ -21,7 +21,6 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
     Height = 330
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 377
     object historico: TLabel
       Left = 24
       Top = 72
@@ -55,14 +54,15 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 264
       Width = 91
       Height = 49
-      Caption = 'Cancelar'
+      Caption = '&Cancelar'
+      OnClick = btnCancelarClick
     end
     object btnConfirmar: TSpeedButton
       Left = 520
       Top = 264
       Width = 105
       Height = 49
-      Caption = 'Confirmar'
+      Caption = '&Confirmar'
     end
     object TEdit
       Left = 24
@@ -86,10 +86,19 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 38
       Width = 137
       Height = 27
+      Style = csDropDownList
+      CharCase = ecUpperCase
+      DragMode = dmAutomatic
+      ExtendedUI = True
+      ItemIndex = 0
+      ParentShowHint = False
+      ShowHint = False
+      Sorted = True
       TabOrder = 0
+      Text = 'ENTRADA'
       Items.Strings = (
-        'Entrada'
-        'Saida')
+        'ENTRADA'
+        'SAIDA')
     end
     object checkAtivo: TCheckBox
       Left = 24

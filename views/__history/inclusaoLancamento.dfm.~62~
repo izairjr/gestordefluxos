@@ -21,7 +21,6 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
     Height = 330
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 377
     object historico: TLabel
       Left = 24
       Top = 72
@@ -55,21 +54,21 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 264
       Width = 91
       Height = 49
-      Caption = 'Cancelar'
+      Caption = '&Cancelar'
     end
     object btnConfirmar: TSpeedButton
       Left = 520
       Top = 264
       Width = 105
       Height = 49
-      Caption = 'Confirmar'
+      Caption = '&Confirmar'
     end
     object TEdit
       Left = 24
       Top = 97
       Width = 601
       Height = 27
-      TabOrder = 0
+      TabOrder = 2
       Text = '...'
     end
     object valor: TEdit
@@ -86,10 +85,19 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 38
       Width = 137
       Height = 27
-      TabOrder = 3
+      Style = csDropDownList
+      CharCase = ecUpperCase
+      DragMode = dmAutomatic
+      ExtendedUI = True
+      ItemIndex = 0
+      ParentShowHint = False
+      ShowHint = False
+      Sorted = True
+      TabOrder = 0
+      Text = 'ENTRADA'
       Items.Strings = (
-        'Entrada'
-        'Saida')
+        'ENTRADA'
+        'SAIDA')
     end
     object checkAtivo: TCheckBox
       Left = 24
@@ -139,14 +147,18 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       OnClick = checkCaixaClick
     end
     object MaskEdit1: TMaskEdit
-      Left = 346
-      Top = 38
+      Left = 344
+      Top = 39
       Width = 118
       Height = 27
       EditMask = '!99/99/0000;0;_'
       MaxLength = 10
-      TabOrder = 2
+      TabOrder = 3
       Text = ''
     end
+  end
+  object ActionList1: TActionList
+    Left = 568
+    Top = 152
   end
 end

@@ -4,7 +4,8 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Mask, Vcl.Buttons, System.Actions, Vcl.ActnList;
 
 type
   TinclusaoLancamento_View = class(TForm)
@@ -12,8 +13,7 @@ type
     historico: TLabel;
     valor: TEdit;
     informeValor: TLabel;
-    dataLanc: TEdit;
-    labelValor: TLabel;
+    labelData: TLabel;
     comboTipoLanc: TComboBox;
     labelTipo: TLabel;
     checkAtivo: TCheckBox;
@@ -21,6 +21,10 @@ type
     comboTipoBalanco: TComboBox;
     checkPatrimonioLiquido: TCheckBox;
     checkCaixa: TCheckBox;
+    MaskEdit1: TMaskEdit;
+    btnCancelar: TSpeedButton;
+    btnConfirmar: TSpeedButton;
+    ActionList1: TActionList;
     procedure checkAtivoClick(Sender: TObject);
     procedure checkPassivoClick(Sender: TObject);
     procedure checkCaixaClick(Sender: TObject);

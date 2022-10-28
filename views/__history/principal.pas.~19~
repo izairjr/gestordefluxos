@@ -14,6 +14,7 @@ type
     btnIncluirLancamento: TSpeedButton;
     btnRelatorios: TSpeedButton;
     btnImportar: TSpeedButton;
+    editData: TDatePicker;
     labelBoasvindas: TLinkLabel;
     procedure btnIncluirLancamentoClick(Sender: TObject);
   private

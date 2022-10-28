@@ -4,16 +4,15 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
+  Vcl.Mask, Vcl.Buttons, System.Actions, Vcl.ActnList, Vcl.NumberBox;
 
 type
   TinclusaoLancamento_View = class(TForm)
     Panel1: TPanel;
     historico: TLabel;
-    valor: TEdit;
     informeValor: TLabel;
-    dataLanc: TEdit;
-    labelValor: TLabel;
+    labelData: TLabel;
     comboTipoLanc: TComboBox;
     labelTipo: TLabel;
     checkAtivo: TCheckBox;
@@ -21,9 +20,13 @@ type
     comboTipoBalanco: TComboBox;
     checkPatrimonioLiquido: TCheckBox;
     checkCaixa: TCheckBox;
+    MaskEdit1: TMaskEdit;
+    btnCancelar: TSpeedButton;
+    btnConfirmar: TSpeedButton;
     procedure checkAtivoClick(Sender: TObject);
     procedure checkPassivoClick(Sender: TObject);
     procedure checkCaixaClick(Sender: TObject);
+    procedure checkPatrimonioLiquidoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,6 +50,8 @@ begin
     comboTipoBalanco.Visible := True;
     checkPatrimonioLiquido.Enabled :=False;
     checkPatrimonioLiquido.Checked := False;
+    checkCaixa.Checked := False;
+    checkCaixa.Enabled := False;
     tipoconta := 'A';
 end
 else
@@ -54,6 +59,7 @@ begin
     checkPassivo.Enabled := True;
     comboTipoBalanco.Visible := False;
     checkPatrimonioLiquido.Enabled :=True;
+    checkCaixa.Enabled := True;
 end;
 end;
 
@@ -87,6 +93,8 @@ begin
     checkPatrimonioLiquido.Enabled :=False;
     checkPatrimonioLiquido.Checked := False;
     comboTipoBalanco.Visible := True;
+    checkCaixa.Checked := False;
+    checkCaixa.Enabled := False;
     tipoconta := 'P';
 end
 else
@@ -94,7 +102,30 @@ begin
      checkAtivo.Enabled := True;
      comboTipoBalanco.Visible := False;
      checkPatrimonioLiquido.Enabled :=True;
+     checkCaixa.Enabled := True;
 end;
+end;
+
+procedure TinclusaoLancamento_View.checkPatrimonioLiquidoClick(Sender: TObject);
+begin
+if checkPatrimonioLiquido.Checked = True then
+begin
+  checkAtivo.Enabled := False;
+  checkPassivo.Enabled := False;
+  checkCaixa.Enabled := False;
+  checkAtivo.Checked := False;
+  checkPassivo.Checked := False;
+  checkCaixa.Checked := False;
+  tipoconta := 'PL';
+end
+else
+begin
+  checkAtivo.Enabled := True;
+  checkPassivo.Enabled := True;
+  checkCaixa.Enabled := True;
+
+end;
+
 end;
 
 end.

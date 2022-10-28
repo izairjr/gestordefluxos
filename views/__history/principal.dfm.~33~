@@ -1,18 +1,20 @@
 object telainicial: Ttelainicial
   Left = 0
   Top = 0
-  Width = 749
-  Height = 443
+  Width = 753
+  Height = 536
   AutoScroll = True
   AutoSize = True
   Caption = 'Gestor - Caixa'
-  Color = clBtnFace
+  Color = clGradientActiveCaption
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poDesktopCenter
+  PrintScale = poNone
   PixelsPerInch = 96
   TextHeight = 13
   object RelativePanel1: TRelativePanel
@@ -49,7 +51,16 @@ object telainicial: Ttelainicial
         AlignVerticalCenterWithPanel = False
       end
       item
-        Control = StatusBar1
+        Control = editData
+        AlignBottomWithPanel = False
+        AlignHorizontalCenterWithPanel = False
+        AlignLeftWithPanel = False
+        AlignRightWithPanel = False
+        AlignTopWithPanel = False
+        AlignVerticalCenterWithPanel = False
+      end
+      item
+        Control = labelBoasvindas
         AlignBottomWithPanel = False
         AlignHorizontalCenterWithPanel = False
         AlignLeftWithPanel = False
@@ -60,6 +71,9 @@ object telainicial: Ttelainicial
     Color = clActiveCaption
     ParentBackground = False
     TabOrder = 0
+    DesignSize = (
+      737
+      497)
     object btnIncluirLancamento: TSpeedButton
       AlignWithMargins = True
       Left = 0
@@ -698,6 +712,7 @@ object telainicial: Ttelainicial
       ParentBiDiMode = False
       ShowHint = False
       Spacing = 2
+      OnClick = btnIncluirLancamentoClick
     end
     object btnRelatorios: TSpeedButton
       AlignWithMargins = True
@@ -1777,13 +1792,34 @@ object telainicial: Ttelainicial
       ShowHint = False
       Spacing = 2
     end
-    object StatusBar1: TStatusBar
-      Left = 0
-      Top = 385
-      Width = 733
-      Height = 19
+    object editData: TDatePicker
+      Left = 587
+      Top = 465
       Anchors = []
-      Panels = <>
+      Color = clActiveCaption
+      Date = 44860.000000000000000000
+      DateFormat = 'dd/MM/yyyy'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      TabOrder = 0
+    end
+    object labelBoasvindas: TLinkLabel
+      Left = 8
+      Top = 472
+      Width = 109
+      Height = 26
+      Align = alBottom
+      Caption = 'Bem vindo...'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
     end
   end
 end

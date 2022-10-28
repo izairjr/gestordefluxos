@@ -29,6 +29,7 @@ type
     procedure checkPassivoClick(Sender: TObject);
     procedure checkCaixaClick(Sender: TObject);
     procedure checkPatrimonioLiquidoClick(Sender: TObject);
+    procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -42,6 +43,13 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TinclusaoLancamento_View.btnCancelarClick(Sender: TObject);
+begin
+comboTipoLanc.ItemIndex := 0;
+inclusaoLancamento_View.Close;
+
+end;
 
 procedure TinclusaoLancamento_View.checkAtivoClick(Sender: TObject);
 begin
