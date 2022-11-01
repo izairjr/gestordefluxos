@@ -3,10 +3,17 @@ unit principal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.WinXCtrls, Vcl.Menus,
   System.ImageList, Vcl.ImgList, Vcl.Buttons, Vcl.ComCtrls, Vcl.StdCtrls,
-  Vcl.WinXPickers;
+  Vcl.WinXPickers, FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat,
+  FireDAC.Phys.SQLiteDef, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
+  FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
+  FireDAC.VCLUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.VCLUI.Login, FireDAC.Comp.UI, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client ;
 
 type
   Ttelainicial = class(TForm)
@@ -27,14 +34,13 @@ var
 
 implementation
 
-
 {$R *.dfm}
 
 uses inclusaoLancamento;
 
 procedure Ttelainicial.btnIncluirLancamentoClick(Sender: TObject);
 begin
-inclusaoLancamento_view.ShowModal;
+  inclusaoLancamento_view.ShowModal;
 
 end;
 

@@ -7,6 +7,8 @@ object telainicial: Ttelainicial
   AutoSize = True
   Caption = 'Gestor - Caixa'
   Color = clGradientActiveCaption
+  DefaultMonitor = dmDesktop
+  Enabled = False
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11

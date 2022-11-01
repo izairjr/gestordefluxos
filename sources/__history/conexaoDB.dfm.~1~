@@ -1,0 +1,26 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 377
+  Width = 535
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=C:\Gestor Fluxo caixa\gestorfluxosDB.sqlite'
+      'DriverID=SQLite')
+    Left = 80
+    Top = 57
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 184
+    Top = 56
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 192
+    Top = 136
+  end
+  object FDGUIxLoginDialog1: TFDGUIxLoginDialog
+    Provider = 'Forms'
+    Left = 72
+    Top = 144
+  end
+end

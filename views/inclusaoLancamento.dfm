@@ -62,24 +62,18 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 264
       Width = 105
       Height = 49
-      Caption = '&Confirmar'
+      Caption = '&Gravar'
+      Layout = blGlyphBottom
     end
-    object TEdit
+    object edtHistorico: TEdit
       Left = 24
       Top = 97
       Width = 601
       Height = 27
-      TabOrder = 2
-      Text = '...'
-    end
-    object valor: TEdit
-      Left = 190
-      Top = 39
-      Width = 121
-      Height = 27
-      NumbersOnly = True
-      OEMConvert = True
-      TabOrder = 1
+      Cursor = crIBeam
+      DragCursor = crIBeam
+      DragKind = dkDock
+      TabOrder = 3
     end
     object comboTipoLanc: TComboBox
       Left = 24
@@ -123,7 +117,10 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 147
       Width = 121
       Height = 27
+      Style = csDropDownList
+      ItemIndex = 0
       TabOrder = 6
+      Text = 'Circulante'
       Visible = False
       Items.Strings = (
         'Circulante'
@@ -147,19 +144,42 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       TabOrder = 8
       OnClick = checkCaixaClick
     end
-    object MaskEdit1: TMaskEdit
+    object edtdatas: TMaskEdit
       Left = 344
       Top = 39
       Width = 118
       Height = 27
       EditMask = '!99/99/0000;0;_'
       MaxLength = 10
-      TabOrder = 3
+      TabOrder = 2
       Text = ''
     end
-  end
-  object ActionList1: TActionList
-    Left = 568
-    Top = 152
+    object edtvalorlanc: TNumberBox
+      Left = 190
+      Top = 39
+      Width = 121
+      Height = 27
+      CharCase = ecUpperCase
+      CurrencyFormat = 4
+      Decimal = 4
+      DoubleBuffered = True
+      Mode = nbmFloat
+      ParentDoubleBuffered = False
+      ParentShowHint = False
+      SmallStep = 9.000000000000000000
+      ShowHint = False
+      TabOrder = 1
+      NegativeValueColor = clRed
+    end
+    object valor: TEdit
+      Left = 222
+      Top = 322
+      Width = 121
+      Height = 27
+      Enabled = False
+      OEMConvert = True
+      TabOrder = 9
+      Visible = False
+    end
   end
 end

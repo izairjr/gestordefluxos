@@ -5,13 +5,12 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.Mask, Vcl.Buttons, System.Actions, Vcl.ActnList;
+  Vcl.Mask, Vcl.Buttons, System.Actions, Vcl.ActnList, Vcl.NumberBox;
 
 type
   TinclusaoLancamento_View = class(TForm)
     Panel1: TPanel;
     historico: TLabel;
-    valor: TEdit;
     informeValor: TLabel;
     labelData: TLabel;
     comboTipoLanc: TComboBox;
@@ -21,10 +20,12 @@ type
     comboTipoBalanco: TComboBox;
     checkPatrimonioLiquido: TCheckBox;
     checkCaixa: TCheckBox;
-    MaskEdit1: TMaskEdit;
+    edtdatas: TMaskEdit;
     btnCancelar: TSpeedButton;
     btnConfirmar: TSpeedButton;
-    ActionList1: TActionList;
+    edtvalorlanc: TNumberBox;
+    valor: TEdit;
+    edtHistorico: TEdit;
     procedure checkAtivoClick(Sender: TObject);
     procedure checkPassivoClick(Sender: TObject);
     procedure checkCaixaClick(Sender: TObject);
@@ -47,6 +48,13 @@ implementation
 procedure TinclusaoLancamento_View.btnCancelarClick(Sender: TObject);
 begin
 comboTipoLanc.ItemIndex := 0;
+edtvalorlanc.Value := 0;
+edtdatas.Text := '';
+edtHistorico.Text := '';
+checkAtivo.Checked := False;
+checkPassivo.Checked := False;
+checkPatrimonioLiquido.Checked := False;
+checkcaixa.Checked := False;
 inclusaoLancamento_View.Close;
 
 end;
