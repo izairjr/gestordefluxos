@@ -3,22 +3,25 @@
 	<Transactions>
     <Transaction>2022/10/25 20:45:17.000.346,=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2022/10/26 19:31:19.000.953,=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/10/26 19:32:13.000.451,C:\Gestor\views\principal.dfm=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2022/10/26 19:32:13.000.451,C:\Gestor\views\principal.pas=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/10/26 19:32:39.000.112,C:\Users\izair\Documents\Embarcadero\Studio\Projects\Gestor.dproj=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2022/10/26 19:33:57.000.840,C:\Gestor\Gestor.dproj=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Gestor.dproj</Transaction>
+    <Transaction>2022/10/26 19:32:13.000.451,C:\Users\izair\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Gestor\views\principal.dfm</Transaction>
+    <Transaction>2022/10/26 19:32:13.000.451,C:\Users\izair\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Gestor\views\principal.pas</Transaction>
+    <Transaction>2022/10/26 19:32:39.000.112,C:\Users\izair\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\izair\Documents\Embarcadero\Studio\Projects\Gestor.dproj</Transaction>
+    <Transaction>2022/10/26 19:33:57.000.840,C:\Users\izair\Documents\Embarcadero\Studio\Projects\Gestor.dproj=C:\Gestor\Gestor.dproj</Transaction>
     <Transaction>2022/10/26 20:45:17.000.768,=C:\Gestor\views\inclusaoLancamento.pas</Transaction>
     <Transaction>2022/10/31 20:41:31.000.425,=C:\GestorDeFluxos\Unit1.pas</Transaction>
-    <Transaction>2022/10/31 20:42:09.000.603,C:\GestorDeFluxos\Unit1.pas=C:\GestorDeFluxos\sources\conexaoDB.pas</Transaction>
-    <Transaction>2022/10/31 20:42:09.000.603,C:\GestorDeFluxos\Unit1.dfm=C:\GestorDeFluxos\sources\conexaoDB.dfm</Transaction>
-    <Transaction>2022/10/31 20:42:49.318,=C:\GestorDeFluxos\Unit1.pas</Transaction>
-    <Transaction>2022/10/31 20:47:26.540,C:\GestorDeFluxos\views\login_view.pas=C:\GestorDeFluxos\Unit1.pas</Transaction>
-    <Transaction>2022/10/31 20:47:26.540,C:\GestorDeFluxos\views\login_view.dfm=C:\GestorDeFluxos\Unit1.dfm</Transaction>
-    <Transaction>2022/10/31 21:56:02.374,=C:\GestorDeFluxos\Unit1.pas</Transaction>
-    <Transaction>2022/10/31 22:31:24.430,C:\GestorDeFluxos\sources\conexaoDB.pas=</Transaction>
-    <Transaction>2022/10/31 22:42:05.911,=C:\GestorDeFluxos\Unit1.pas</Transaction>
-    <Transaction>2022/10/31 22:42:43.664,C:\GestorDeFluxos\sources\conexoesLogin.pas=C:\GestorDeFluxos\Unit1.pas</Transaction>
-  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <Transaction>2022/10/31 20:42:09.000.603,C:\GestorDeFluxos\sources\conexaoDB.dfm=C:\GestorDeFluxos\Unit1.dfm</Transaction>
+    <Transaction>2022/10/31 20:42:09.000.603,C:\GestorDeFluxos\sources\conexaoDB.pas=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:42:49.000.318,=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:47:26.000.540,C:\GestorDeFluxos\Unit1.pas=C:\GestorDeFluxos\views\login_view.pas</Transaction>
+    <Transaction>2022/10/31 20:47:26.000.540,C:\GestorDeFluxos\Unit1.dfm=C:\GestorDeFluxos\views\login_view.dfm</Transaction>
+    <Transaction>2022/10/31 21:56:02.000.374,=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 22:31:24.000.430,C:\GestorDeFluxos\sources\conexaoDB.pas=</Transaction>
+    <Transaction>2022/10/31 22:42:05.000.911,=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 22:42:43.000.664,C:\GestorDeFluxos\Unit1.pas=C:\GestorDeFluxos\sources\conexoesLogin.pas</Transaction>
+  </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="sources"/>
+    <File Path="sources\conexoesLogin.pas"/>
     <File Path="views"/>
     <File Path="views\login_view.pas"/>
     <File Path="views\login_view.dfm"/>
@@ -26,7 +29,5 @@
     <File Path="views\inclusaoLancamento.dfm"/>
     <File Path="views\principal.pas"/>
     <File Path="views\principal.dfm"/>
-    <File Path="sources"/>
-    <File Path="sources\conexoesLogin.pas"/>
   </ProjectSortOrder>
 </BorlandProject>

@@ -25,16 +25,18 @@ object login: Tlogin
   CustomTitleBar.ButtonInactiveForegroundColor = 10066329
   CustomTitleBar.ButtonInactiveBackgroundColor = clWhite
   DefaultMonitor = dmDesktop
-  DragMode = dmAutomatic
+  DragKind = dkDock
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -19
   Font.Name = 'Arial'
   Font.Style = []
   OldCreateOrder = False
+  PopupMode = pmExplicit
   Position = poScreenCenter
   PrintScale = poNone
-  Scaled = False
+  ScreenSnap = True
+  Visible = True
   StyleElements = [seFont, seClient]
   OnActivate = FormActivate
   PixelsPerInch = 96
@@ -1254,6 +1256,7 @@ object login: Tlogin
       Width = 121
       Height = 57
       Caption = 'Entrar'
+      OnClick = btnEntrarClick
     end
     object lbconexao: TLabel
       Left = 16
@@ -1274,6 +1277,7 @@ object login: Tlogin
       Height = 30
       CharCase = ecLowerCase
       TabOrder = 0
+      OnChange = edtUserEnter
       OnEnter = edtUserEnter
       OnExit = edtUserEnter
     end
@@ -1285,6 +1289,7 @@ object login: Tlogin
       CharCase = ecLowerCase
       PasswordChar = #1
       TabOrder = 1
+      OnChange = edtSenhaEnter
       OnEnter = edtSenhaEnter
       OnExit = edtSenhaEnter
     end
@@ -1293,6 +1298,7 @@ object login: Tlogin
     Params.Strings = (
       'Database=C:\Gestor Fluxo caixa\gestorfluxosDB.sqlite'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 328
     Top = 25

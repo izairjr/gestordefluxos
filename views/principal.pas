@@ -22,11 +22,15 @@ type
     btnRelatorios: TSpeedButton;
     btnImportar: TSpeedButton;
     labelBoasvindas: TLinkLabel;
+    btnCadastrarUser: TSpeedButton;
+    lbnUser: TLabel;
     procedure btnIncluirLancamentoClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
+  user_logado: String;
   end;
 
 var
@@ -34,14 +38,26 @@ var
 
 implementation
 
+
 {$R *.dfm}
 
-uses inclusaoLancamento;
+uses inclusaoLancamento , login_view;
 
 procedure Ttelainicial.btnIncluirLancamentoClick(Sender: TObject);
 begin
   inclusaoLancamento_view.ShowModal;
 
+end;
+
+procedure Ttelainicial.FormActivate(Sender: TObject);
+begin
+lbnUser.Caption := user_logado.ToUpper;
+end;
+
+procedure Ttelainicial.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+principal.telainicial.Destroy;
+principal.telainicial.Close;
 end;
 
 end.

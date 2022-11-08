@@ -29,21 +29,82 @@ type
     procedure edtUserEnter(Sender: TObject);
     procedure edtSenhaEnter(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure btnEntrarClick(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
+
   end;
 
 var
   login: Tlogin;
-  user: String;
   senha: String;
+  user: String;
+  user_db : String;
+  senha_db : String;
+  num_usuarios : Integer;
+  acesso :bool;
+  i : Integer;
 
 implementation
 
 
 {$R *.dfm}
+
+
+procedure Tlogin.btnEntrarClick(Sender: TObject);
+begin
+i:= 0;
+       try
+         FDQuery1.Close;
+         FDQuery1.SQL.Clear;
+         FDQuery1.SQL.Add('select count(nome) as num_usuarios from usuarios');
+         FDQuery1.Open;
+         num_usuarios := FDQuery1.FieldByName('num_usuarios').AsInteger;
+         while i <= num_usuarios do
+         Begin
+         i := (i+1);
+                  FDQuery1.Close;
+                  FDQuery1.SQL.Clear;
+                  FDQuery1.SQL.Add('select nome , senha from usuarios where idusuario = :num_usuario;');
+                  FDQuery1.ParamByName('num_usuario').AsInteger := i;
+                  FDQuery1.Open;
+                  user_db := FDQuery1.FieldByName('nome').AsString;
+                  senha_db := FDQuery1.FieldByName('senha').AsString;
+                     if (user_db = user) and (senha_db = senha) then
+                     begin
+                      acesso := True;
+                      break
+
+                     end
+                     else
+                     begin
+                      acesso :=False  ;
+                      continue;
+                     end;
+         End;
+       except
+         showmessage('falha na validação de usuários.');
+       end;
+       if acesso = True then
+         begin
+          showmessage('Usuario Encontrado');
+          principal.telainicial.Enabled := True;
+          login_view.login.Enabled := False;
+          login_view.login.Visible := False;
+          login_view.login.Destroy;
+          principal.telainicial.user_logado := user;
+          principal.telainicial.ShowModal;
+          login_view.login.Close;
+
+         end
+         else
+         begin
+         showmessage('Usuário Não encontrado');
+         edtUser.Text:= '';
+         edtSenha.Text := '';
+         end;
+end;
 
 procedure Tlogin.edtSenhaEnter(Sender: TObject);
 begin

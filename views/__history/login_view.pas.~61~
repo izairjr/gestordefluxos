@@ -1,0 +1,126 @@
+unit login_view;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
+  Vcl.Imaging.jpeg, Vcl.Buttons, principal, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
+  FireDAC.VCLUI.Wait, FireDAC.Phys.SQLiteWrapper.Stat, FireDAC.Stan.Param,
+  FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
+
+type
+  Tlogin = class(TForm)
+    Panel1: TPanel;
+    imgLogin: TImage;
+    lbUsuario: TLabel;
+    edtUser: TEdit;
+    lbSenha: TLabel;
+    edtSenha: TEdit;
+    btnEntrar: TSpeedButton;
+    FDConnection1: TFDConnection;
+    FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
+    FDQuery1: TFDQuery;
+    lbconexao: TLabel;
+    procedure edtUserEnter(Sender: TObject);
+    procedure edtSenhaEnter(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure btnEntrarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  login: Tlogin;
+  user: String;
+  senha: String;
+  user_db : String;
+  senha_db : String;
+  num_usuarios : Integer;
+  acesso :bool;
+  i : Integer;
+
+implementation
+
+
+{$R *.dfm}
+
+
+procedure Tlogin.btnEntrarClick(Sender: TObject);
+begin
+i:= 0;
+       try
+         FDQuery1.Close;
+         FDQuery1.SQL.Clear;
+         FDQuery1.SQL.Add('select count(nome) as num_usuarios from usuarios');
+         FDQuery1.Open;
+         num_usuarios := FDQuery1.FieldByName('num_usuarios').AsInteger;
+         while i <= num_usuarios do
+         Begin
+         i := (i+1);
+                  FDQuery1.Close;
+                  FDQuery1.SQL.Clear;
+                  FDQuery1.SQL.Add('select nome , senha from usuarios where idusuario = :num_usuario;');
+                  FDQuery1.ParamByName('num_usuario').AsInteger := i;
+                  FDQuery1.Open;
+                  user_db := FDQuery1.FieldByName('nome').AsString;
+                  senha_db := FDQuery1.FieldByName('senha').AsString;
+                     if (user_db = user) and (senha_db = senha) then
+                     begin
+                      acesso := True;
+                      break
+
+                     end
+                     else
+                     begin
+                      acesso :=False  ;
+                      continue;
+                     end;
+         End;
+       except
+         showmessage('falha na validação de usuários.');
+       end;
+       if acesso = True then
+         begin
+          showmessage('Usuario Encontrado');
+          principal.telainicial.ShowModal;
+          login_view.login.Release;
+
+         end
+         else
+         begin
+         showmessage('Usuário Não encontrado');
+         edtUser.Text:= '';
+         edtSenha.Text := '';
+         end;
+end;
+
+procedure Tlogin.edtSenhaEnter(Sender: TObject);
+begin
+senha := edtSenha.Text;
+end;
+
+procedure Tlogin.edtUserEnter(Sender: TObject);
+begin
+user := edtUser.Text;
+end;
+
+procedure Tlogin.FormActivate(Sender: TObject);
+begin
+try
+  FDConnection1.Connected := True;
+  lbconexao.Font.Color := clLime ;
+  lbconexao.Caption := 'Conectado Com o Banco de dados';
+except
+  lbconexao.Font.Color := clRed ;
+  lbconexao.Caption := 'Não foi possivel conectar ao DB';
+end;
+end;
+
+end.
