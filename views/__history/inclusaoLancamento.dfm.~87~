@@ -12,6 +12,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
   Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 19
   object Panel1: TPanel
@@ -62,9 +63,10 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 264
       Width = 105
       Height = 49
-      Caption = '&Confirmar'
+      Caption = '&Gravar'
+      Layout = blGlyphBottom
     end
-    object TEdit
+    object edtHistorico: TEdit
       Left = 24
       Top = 97
       Width = 601
@@ -89,6 +91,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Sorted = True
       TabOrder = 0
       Text = 'ENTRADA'
+      OnChange = comboTipoLancChange
       Items.Strings = (
         'ENTRADA'
         'SAIDA')
@@ -143,7 +146,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       TabOrder = 8
       OnClick = checkCaixaClick
     end
-    object MaskEdit1: TMaskEdit
+    object edtdatas: TMaskEdit
       Left = 344
       Top = 39
       Width = 118
@@ -153,7 +156,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       TabOrder = 2
       Text = ''
     end
-    object valorlanc: TNumberBox
+    object edtvalorlanc: TNumberBox
       Left = 190
       Top = 39
       Width = 121

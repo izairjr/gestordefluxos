@@ -12,6 +12,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
   Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 19
   object Panel1: TPanel
@@ -62,15 +63,18 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 264
       Width = 105
       Height = 49
-      Caption = '&Confirmar'
+      Caption = '&Gravar'
+      Layout = blGlyphBottom
     end
-    object TEdit
+    object edtHistorico: TEdit
       Left = 24
       Top = 97
       Width = 601
       Height = 27
-      TabOrder = 1
-      Text = '...'
+      Cursor = crIBeam
+      DragCursor = crIBeam
+      DragKind = dkDock
+      TabOrder = 3
     end
     object comboTipoLanc: TComboBox
       Left = 24
@@ -87,6 +91,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Sorted = True
       TabOrder = 0
       Text = 'ENTRADA'
+      OnChange = comboTipoLancChange
       Items.Strings = (
         'ENTRADA'
         'SAIDA')
@@ -97,7 +102,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Width = 97
       Height = 17
       Caption = 'Ativo'
-      TabOrder = 3
+      TabOrder = 4
       OnClick = checkAtivoClick
     end
     object checkPassivo: TCheckBox
@@ -106,7 +111,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Width = 97
       Height = 17
       Caption = 'Passivo'
-      TabOrder = 4
+      TabOrder = 5
       OnClick = checkPassivoClick
     end
     object comboTipoBalanco: TComboBox
@@ -116,9 +121,10 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Height = 27
       Style = csDropDownList
       ItemIndex = 0
-      TabOrder = 5
+      TabOrder = 6
       Text = 'Circulante'
       Visible = False
+      OnChange = comboTipoBalancoChange
       Items.Strings = (
         'Circulante'
         'N'#227'o-Circulante')
@@ -129,7 +135,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Width = 177
       Height = 17
       Caption = 'Patrimonio liquido'
-      TabOrder = 6
+      TabOrder = 7
       OnClick = checkPatrimonioLiquidoClick
     end
     object checkCaixa: TCheckBox
@@ -138,10 +144,10 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Width = 177
       Height = 17
       Caption = 'Caixa Direto'
-      TabOrder = 7
+      TabOrder = 8
       OnClick = checkCaixaClick
     end
-    object MaskEdit1: TMaskEdit
+    object edtdatas: TMaskEdit
       Left = 344
       Top = 39
       Width = 118
@@ -151,12 +157,22 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       TabOrder = 2
       Text = ''
     end
-    object valorlanc: TNumberBox
+    object edtvalorlanc: TNumberBox
       Left = 190
       Top = 39
       Width = 121
       Height = 27
-      TabOrder = 8
+      CharCase = ecUpperCase
+      CurrencyFormat = 4
+      Decimal = 4
+      DoubleBuffered = True
+      Mode = nbmFloat
+      ParentDoubleBuffered = False
+      ParentShowHint = False
+      SmallStep = 9.000000000000000000
+      ShowHint = False
+      TabOrder = 1
+      NegativeValueColor = clRed
     end
     object valor: TEdit
       Left = 222
@@ -166,6 +182,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Enabled = False
       OEMConvert = True
       TabOrder = 9
+      Visible = False
     end
   end
 end

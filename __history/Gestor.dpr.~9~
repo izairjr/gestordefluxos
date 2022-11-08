@@ -7,8 +7,7 @@ uses
   login_view in 'views\login_view.pas' {login},
   conexoesLogin in 'sources\conexoesLogin.pas',
   Vcl.Themes,
-  Vcl.Styles,
-  lancamento in 'sources\lancamento.pas';
+  Vcl.Styles;
 
 {$R *.res}
 

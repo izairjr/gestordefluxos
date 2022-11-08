@@ -117,6 +117,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="sources\conexoesLogin.pas"/>
+        <DCCReference Include="sources\lancamento.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

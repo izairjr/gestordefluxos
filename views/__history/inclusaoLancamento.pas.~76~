@@ -20,24 +20,28 @@ type
     comboTipoBalanco: TComboBox;
     checkPatrimonioLiquido: TCheckBox;
     checkCaixa: TCheckBox;
-    MaskEdit1: TMaskEdit;
+    edtdatas: TMaskEdit;
     btnCancelar: TSpeedButton;
     btnConfirmar: TSpeedButton;
-    NumberBox1: TNumberBox;
+    edtvalorlanc: TNumberBox;
+    valor: TEdit;
+    edtHistorico: TEdit;
     procedure checkAtivoClick(Sender: TObject);
     procedure checkPassivoClick(Sender: TObject);
     procedure checkCaixaClick(Sender: TObject);
     procedure checkPatrimonioLiquidoClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure comboTipoLancChange(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
   end;
 
 var
   inclusaoLancamento_View: TinclusaoLancamento_View;
   tipoConta : String;
+  tipoLanc : String;
 
 implementation
 
@@ -46,6 +50,13 @@ implementation
 procedure TinclusaoLancamento_View.btnCancelarClick(Sender: TObject);
 begin
 comboTipoLanc.ItemIndex := 0;
+edtvalorlanc.Value := 0;
+edtdatas.Text := '';
+edtHistorico.Text := '';
+checkAtivo.Checked := False;
+checkPassivo.Checked := False;
+checkPatrimonioLiquido.Checked := False;
+checkcaixa.Checked := False;
 inclusaoLancamento_View.Close;
 
 end;
@@ -135,6 +146,23 @@ begin
 
 end;
 
+end;
+
+procedure TinclusaoLancamento_View.comboTipoLancChange(Sender: TObject);
+begin
+if comboTipolanc.ItemIndex = 0 then
+begin
+tipoLanc := 'E';
+end
+else
+begin
+  tipoLanc := 'S';
+end;
+end;
+
+procedure TinclusaoLancamento_View.FormActivate(Sender: TObject);
+begin
+tipoLanc := 'E';
 end;
 
 end.

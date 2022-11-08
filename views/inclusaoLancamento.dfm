@@ -12,6 +12,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
   Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 19
   object Panel1: TPanel
@@ -64,6 +65,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Height = 49
       Caption = '&Gravar'
       Layout = blGlyphBottom
+      OnClick = btnConfirmarClick
     end
     object edtHistorico: TEdit
       Left = 24
@@ -90,6 +92,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Sorted = True
       TabOrder = 0
       Text = 'ENTRADA'
+      OnChange = comboTipoLancChange
       Items.Strings = (
         'ENTRADA'
         'SAIDA')
@@ -122,6 +125,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       TabOrder = 6
       Text = 'Circulante'
       Visible = False
+      OnChange = comboTipoBalancoChange
       Items.Strings = (
         'Circulante'
         'N'#227'o-Circulante')

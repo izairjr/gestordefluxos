@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.Mask, Vcl.Buttons, System.Actions, Vcl.ActnList, Vcl.NumberBox;
+  Vcl.Mask, Vcl.Buttons, System.Actions, Vcl.ActnList, Vcl.NumberBox, lancamento;
 
 type
   TinclusaoLancamento_View = class(TForm)
@@ -31,15 +31,20 @@ type
     procedure checkCaixaClick(Sender: TObject);
     procedure checkPatrimonioLiquidoClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
+    procedure comboTipoLancChange(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
+    procedure comboTipoBalancoChange(Sender: TObject);
+    procedure btnConfirmarClick(Sender: TObject);
   private
     { Private declarations }
   public
-    { Public declarations }
   end;
 
 var
   inclusaoLancamento_View: TinclusaoLancamento_View;
   tipoConta : String;
+  tipoLanc : String;
+  tipoBalanco : String;
 
 implementation
 
@@ -59,6 +64,19 @@ inclusaoLancamento_View.Close;
 
 end;
 
+procedure TinclusaoLancamento_View.btnConfirmarClick(Sender: TObject);
+begin
+Try
+  begin
+   lancamento.incluirlancamento;
+  end
+except
+  begin
+
+  end;
+End;
+end;
+
 procedure TinclusaoLancamento_View.checkAtivoClick(Sender: TObject);
 begin
 if checkAtivo.Checked = True then
@@ -71,6 +89,7 @@ begin
     checkCaixa.Checked := False;
     checkCaixa.Enabled := False;
     tipoconta := 'A';
+    tipoBalanco := 'C';
 end
 else
 begin
@@ -114,6 +133,7 @@ begin
     checkCaixa.Checked := False;
     checkCaixa.Enabled := False;
     tipoconta := 'P';
+    tipoBalanco := 'C';
 end
 else
 begin
@@ -144,6 +164,36 @@ begin
 
 end;
 
+end;
+
+procedure TinclusaoLancamento_View.comboTipoBalancoChange(Sender: TObject);
+begin
+if comboTipoBalanco.ItemIndex = 0 then
+begin
+  tipoBalanco := 'C';
+end
+else
+begin
+  tipoBalanco := 'N';
+end;
+
+end;
+
+procedure TinclusaoLancamento_View.comboTipoLancChange(Sender: TObject);
+begin
+if comboTipolanc.ItemIndex = 0 then
+begin
+tipoLanc := 'E';
+end
+else
+begin
+  tipoLanc := 'S';
+end;
+end;
+
+procedure TinclusaoLancamento_View.FormActivate(Sender: TObject);
+begin
+tipoLanc := 'E';
 end;
 
 end.

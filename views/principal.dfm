@@ -1269,7 +1269,7 @@ object telainicial: Ttelainicial
     object btnImportar: TSpeedButton
       AlignWithMargins = True
       Left = 0
-      Top = 221
+      Top = 218
       Width = 201
       Height = 104
       ParentCustomHint = False
@@ -1823,7 +1823,7 @@ object telainicial: Ttelainicial
     object btnCadastrarUser: TSpeedButton
       AlignWithMargins = True
       Left = 0
-      Top = 331
+      Top = 327
       Width = 201
       Height = 104
       ParentCustomHint = False
