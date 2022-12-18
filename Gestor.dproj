@@ -118,6 +118,11 @@
         </DCCReference>
         <DCCReference Include="sources\conexoesLogin.pas"/>
         <DCCReference Include="sources\lancamento.pas"/>
+        <DCCReference Include="sources\DBconection.pas">
+            <Form>DataModule1</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

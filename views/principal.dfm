@@ -96,7 +96,7 @@ object telainicial: Ttelainicial
       ParentCustomHint = False
       Align = alLeft
       BiDiMode = bdLeftToRight
-      Caption = 'Incluir Lan'#231'amento'
+      Caption = '&Incluir Lan'#231'amento'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clInactiveCaptionText
       Font.Height = -19
@@ -736,7 +736,7 @@ object telainicial: Ttelainicial
       ParentCustomHint = False
       Align = alLeft
       BiDiMode = bdLeftToRight
-      Caption = 'Relat'#243'rios'
+      Caption = '&Relat'#243'rios'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -1275,7 +1275,7 @@ object telainicial: Ttelainicial
       ParentCustomHint = False
       Align = alLeft
       BiDiMode = bdLeftToRight
-      Caption = 'Importar'
+      Caption = 'I&mportar'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19
@@ -1829,7 +1829,7 @@ object telainicial: Ttelainicial
       ParentCustomHint = False
       Align = alLeft
       BiDiMode = bdLeftToRight
-      Caption = 'Incluir Usu'#225'rio'
+      Caption = 'I&ncluir Usu'#225'rio'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -19

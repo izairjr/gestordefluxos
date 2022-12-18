@@ -20,11 +20,17 @@
     <Transaction>2022/10/31 22:42:43.000.664,C:\GestorDeFluxos\sources\conexoesLogin.pas=C:\GestorDeFluxos\Unit1.pas</Transaction>
     <Transaction>2022/11/07 22:22:31.000.996,=C:\GestorDeFluxos\Unit1.pas</Transaction>
     <Transaction>2022/11/07 22:22:56.000.056,C:\GestorDeFluxos\Unit1.pas=C:\GestorDeFluxos\sources\lancamento.pas</Transaction>
+    <Transaction>2022/11/23 20:25:55.000.879,=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/12/11 14:16:34.560,=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/12/11 14:20:14.372,C:\GestorDeFluxos\sources\DBconection.pas=C:\GestorDeFluxos\Unit1.pas</Transaction>
+    <Transaction>2022/12/11 14:20:14.372,C:\GestorDeFluxos\sources\DBconection.dfm=C:\GestorDeFluxos\Unit1.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="sources"/>
     <File Path="sources\conexoesLogin.pas"/>
     <File Path="sources\lancamento.pas"/>
+    <File Path="sources\DBconection.pas"/>
+    <File Path="sources\DBconection.dfm"/>
     <File Path="views"/>
     <File Path="views\login_view.pas"/>
     <File Path="views\login_view.dfm"/>

@@ -8,7 +8,8 @@ uses
   conexoesLogin in 'sources\conexoesLogin.pas',
   Vcl.Themes,
   Vcl.Styles,
-  lancamento in 'sources\lancamento.pas';
+  lancamento in 'sources\lancamento.pas',
+  DBconection in 'sources\DBconection.pas' {DataModule1: TDataModule};
 
 {$R *.res}
 
@@ -19,5 +20,6 @@ begin
   Application.CreateForm(Tlogin, login);
   Application.CreateForm(Ttelainicial, telainicial);
   Application.CreateForm(TinclusaoLancamento_View, inclusaoLancamento_View);
+  Application.CreateForm(TDataModule1, DataModule1);
   Application.Run;
 end.

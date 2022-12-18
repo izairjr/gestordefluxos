@@ -32,7 +32,7 @@ type
     procedure checkPatrimonioLiquidoClick(Sender: TObject);
     procedure btnCancelarClick(Sender: TObject);
     procedure comboTipoLancChange(Sender: TObject);
-    procedure FormActivate(Sender: TObject);
+//    procedure FormActivate(Sender: TObject);
     procedure comboTipoBalancoChange(Sender: TObject);
     procedure btnConfirmarClick(Sender: TObject);
   private
@@ -47,6 +47,8 @@ var
   tipoBalanco : String;
 
 implementation
+
+
 
 {$R *.dfm}
 
@@ -65,14 +67,39 @@ inclusaoLancamento_View.Close;
 end;
 
 procedure TinclusaoLancamento_View.btnConfirmarClick(Sender: TObject);
+var
+   Lancamento: TLancamento;
 begin
 Try
   begin
-   lancamento.incluirlancamento;
-  end
-except
-  begin
 
+  Lancamento := TLancamento.Create;
+  Lancamento.incluirLancamento;
+  ;
+
+  // Voce pode também criar uma função, assim vc não precisa criar essa var
+  // sucesso.
+
+  // A function , eu passo que o tipo é bool e que ela retorna sucesso, seria isso?
+  // assim ó
+     showmessage('Lançamento Incluido com Sucesso');
+
+
+
+
+
+  {
+
+
+  }
+
+
+   end
+except
+  on e:exception do
+  begin
+  showmessage('Infelizmente não foi possivel realizar a inclusão' + e.Message);
+  showmessage(e.StackTrace);
   end;
 End;
 end;
@@ -191,9 +218,9 @@ begin
 end;
 end;
 
-procedure TinclusaoLancamento_View.FormActivate(Sender: TObject);
-begin
-tipoLanc := 'E';
-end;
+//procedure TinclusaoLancamento_View.FormActivate(Sender: TObject);
+//begin
+//tipoLanc := 'E';
+//end;
 
 end.

@@ -1255,7 +1255,13 @@ object login: Tlogin
       Top = 224
       Width = 121
       Height = 57
-      Caption = 'Entrar'
+      Caption = '&Entrar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBackground
+      Font.Height = -19
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentFont = False
       OnClick = btnEntrarClick
     end
     object lbconexao: TLabel
@@ -1298,7 +1304,6 @@ object login: Tlogin
     Params.Strings = (
       'Database=C:\Gestor Fluxo caixa\gestorfluxosDB.sqlite'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     Left = 328
     Top = 25

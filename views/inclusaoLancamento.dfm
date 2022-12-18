@@ -12,7 +12,6 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
   Font.Style = [fsBold]
   OldCreateOrder = False
   Position = poDesktopCenter
-  OnActivate = FormActivate
   PixelsPerInch = 96
   TextHeight = 19
   object Panel1: TPanel
@@ -82,16 +81,29 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Top = 38
       Width = 137
       Height = 27
+      ParentCustomHint = False
+      BevelInner = bvSpace
       Style = csDropDownList
+      BiDiMode = bdLeftToRight
       CharCase = ecUpperCase
+      Color = clBtnHighlight
+      Ctl3D = True
+      DoubleBuffered = False
+      DragCursor = crDefault
+      DragKind = dkDock
       DragMode = dmAutomatic
-      ExtendedUI = True
-      ItemIndex = 0
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Arial'
+      Font.Style = [fsBold]
+      ParentBiDiMode = False
+      ParentCtl3D = False
+      ParentDoubleBuffered = False
+      ParentFont = False
       ParentShowHint = False
-      ShowHint = False
-      Sorted = True
+      ShowHint = True
       TabOrder = 0
-      Text = 'ENTRADA'
       OnChange = comboTipoLancChange
       Items.Strings = (
         'ENTRADA'
@@ -121,9 +133,7 @@ object inclusaoLancamento_View: TinclusaoLancamento_View
       Width = 121
       Height = 27
       Style = csDropDownList
-      ItemIndex = 0
       TabOrder = 6
-      Text = 'Circulante'
       Visible = False
       OnChange = comboTipoBalancoChange
       Items.Strings = (
